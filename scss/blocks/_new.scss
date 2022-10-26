@@ -1,0 +1,17 @@
+.new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 30px;
+
+  font-family: $cuprum;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: $basic-white;
+
+  background-color: $basic-red;
+
+  transform: rotate(45deg);
+}

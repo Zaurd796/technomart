@@ -1,0 +1,93 @@
+.popup {
+  display: none;
+
+  &.popup_active {
+    display: block;
+  }
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  width: 100%;
+  max-width: 620px;
+
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+
+  transform: translate(-50%, -50%);
+
+  &__top {
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    padding: 46px 80px 37px;
+
+    border-top: 7px solid $basic-red;
+    background-color: $basic-white;
+  }
+
+  &__wrapper {
+    width: calc(50% - 10px);
+    margin-bottom: 13px;
+
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    margin-bottom: 11px;
+
+    font-family: $cuprum;
+    font-size: 18px;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: 7px 9px 7px 12px;
+
+    color: inherit;
+
+    border: 2px solid #c5c5c5;
+    border-radius: 2px;
+
+    &::placeholder {
+      font-family: $ptsans;
+      font-size: 13px;
+      line-height: 24px;
+      color: $basic-neutral-gray;
+    }
+  }
+
+  &__textarea {
+    min-height: 114px;
+
+    resize: none;
+  }
+
+  &__close-button {
+    position: absolute;
+    top: 14px;
+    right: 11px;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+  }
+
+  &__bottom {
+    padding: 37px 80px;
+
+    background: #f4f4f4;
+  }
+
+  &__button {
+    width: 100%;
+
+    border: none;
+  }
+}

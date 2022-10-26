@@ -1,0 +1,24 @@
+.button {
+  display: inline-block;
+  padding: 11px 46px 9px;
+
+  font-family: $cuprum;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: $basic-white;
+  text-decoration: none;
+
+  vertical-align: middle;
+  background-color: $basic-red;
+
+  transition: background-color 0.5s ease;
+
+  &:hover {
+    background-color: $basic-darker-red;
+  }
+
+  &:active {
+    background-color: $basic-dark-red;
+  }
+}

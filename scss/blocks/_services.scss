@@ -1,0 +1,105 @@
+.services {
+  margin-bottom: 70px;
+
+  background-color: $basic-gray;
+
+  &__inner {
+    position: relative;
+
+    padding: 64px 0 100px;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 25px;
+
+    color: $basic-black;
+  }
+
+  &__text {
+    max-width: 394px;
+    margin-top: 0;
+    margin-bottom: 70px;
+  }
+
+  &__tabs {
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+      position: absolute;
+      left: 233px;
+      top: 192px;
+
+      width: 10px;
+      height: 279px;
+
+      background: url("../img/services-object.png") no-repeat;
+      content: "";
+    }
+  }
+
+  input:checked + .services__lable {
+    color: $basic-light-blue;
+    background: $basic-white;
+    box-shadow: 0px 1px 0px $basic-white;
+  }
+  input:checked + .services__lable + .services__tab {
+    display: block;
+  }
+
+  &__lable {
+    display: flex;
+    align-items: center;
+    width: 240px;
+    min-height: 61px;
+    padding-left: 22px;
+
+    font-family: $cuprum;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 30px;
+    color: $basic-white;
+
+    background: $basic-light-blue;
+    box-shadow: 0px 1px 0px #293449, inset 0px 1px 0px #405069;
+
+    &:hover {
+      background: $basic-dark-blue;
+    }
+  }
+
+  &__tab {
+    position: absolute;
+    top: 235px;
+    right: 0;
+
+    display: none;
+    order: 1;
+    width: 619px;
+    height: 283px;
+
+    &:nth-of-type(1) {
+      background: url("../img/services-1.png") center no-repeat;
+    }
+
+    &:nth-of-type(2) {
+      background: url("../img/services-2.png") center no-repeat;
+    }
+
+    &:nth-of-type(3) {
+      background: url("../img/services-3.png") center no-repeat;
+    }
+  }
+
+  &__tab-title {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  &__tab-text {
+    max-width: 300px;
+    margin-top: 0;
+    margin-bottom: 36px;
+  }
+}

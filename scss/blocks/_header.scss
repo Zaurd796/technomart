@@ -1,0 +1,525 @@
+.header {
+  &__top {
+    background-color: $basic-dark-blue;
+  }
+
+  &__top-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    margin-right: 17px;
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    width: 250px;
+  }
+
+  &__toggler {
+    position: relative;
+
+    display: none;
+    width: 40px;
+    height: 30px;
+    padding: 0;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+
+      background-color: $basic-white;
+
+      transition: all 0.3s ease;
+    }
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      width: 100%;
+      height: 2px;
+
+      background-color: $basic-white;
+      content: "";
+
+      transition: all 0.3s ease;
+    }
+
+    &::after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 2px;
+
+      background-color: $basic-white;
+      content: "";
+
+      transition: all 0.3s ease;
+    }
+
+    &:hover span,
+    &:hover::before,
+    &:hover::after {
+      background-color: $basic-red;
+    }
+
+    &:active span,
+    &:active::before,
+    &:active::after {
+      opacity: 0.5;
+    }
+
+    &.open {
+      span {
+        display: none;
+      }
+
+      &::before {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      &::after {
+        top: 50%;
+        bottom: unset;
+        transform: translateY(-50%) rotate(-45deg);
+      }
+    }
+  }
+
+  &__button {
+    order: -1;
+    padding: 0;
+
+    border: none;
+    background-color: transparent;
+    vertical-align: middle;
+  }
+
+  &__search-icon {
+    fill-opacity: 0.3;
+  }
+
+  &__input {
+    width: 100%;
+
+    font-family: $cuprum;
+    font-size: 18px;
+    line-height: 24px;
+    color: inherit;
+
+    border: none;
+    background: transparent;
+
+    &::placeholder {
+      font-family: $cuprum;
+      font-size: 18px;
+      line-height: 24px;
+      color: $basic-white;
+    }
+
+    &:focus {
+      background-color: $basic-white;
+      outline: none;
+
+      &::placeholder {
+        font-family: $cuprum;
+        font-size: 18px;
+        line-height: 24px;
+        color: inherit;
+      }
+    }
+
+    &:focus + .header__search-icon path {
+      fill: $basic-red;
+      fill-opacity: 1;
+    }
+
+    &:hover + .header__search-icon {
+      fill-opacity: 1;
+    }
+  }
+
+  &__top-list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__top-list-item_bookmark {
+    .header__top-list-link {
+      position: relative;
+
+      display: inline-block;
+      padding-top: 12px;
+      padding-bottom: 11px;
+      padding-left: 47px;
+      padding-right: 24px;
+
+      vertical-align: middle;
+
+      &::before {
+        position: absolute;
+        left: 23px;
+        top: 15px;
+
+        width: 14px;
+        height: 16px;
+
+        background: url("../img/icon-bookmark.svg") no-repeat;
+        content: "";
+        opacity: 0.3;
+      }
+
+      &:active {
+        background: $basic-darker-blue;
+      }
+    }
+  }
+
+  &__top-list-item_cart {
+    .header__top-list-link {
+      position: relative;
+
+      display: inline-block;
+      padding-top: 12px;
+      padding-bottom: 11px;
+      padding-left: 47px;
+      padding-right: 26px;
+
+      vertical-align: middle;
+
+      &::before {
+        position: absolute;
+        left: 24px;
+        top: 15px;
+
+        width: 15px;
+        height: 15px;
+
+        background: url("../img/icon-cart.svg") no-repeat;
+        content: "";
+        opacity: 0.3;
+      }
+    }
+
+    &:active {
+      background: $basic-darker-blue;
+    }
+  }
+
+  &__top-list-item_order {
+    .header__top-list-link {
+      display: inline-block;
+      padding: 12px 16px 11px 19px;
+
+      background: $basic-green;
+      vertical-align: middle;
+
+      &:hover {
+        background: $basic-light-green;
+      }
+    }
+  }
+
+  &__top-list-link {
+    font-family: $cuprum;
+    font-size: 18px;
+    color: $basic-white;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  &__bottom {
+    background-color: $basic-gray;
+    padding: 37px 0 60px;
+  }
+
+  &__bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    max-width: 197px;
+    margin: 0;
+    margin-left: 30px;
+
+    font-family: $cuprum;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+    color: $basic-red;
+  }
+
+  &__tel {
+    position: relative;
+
+    display: inline-block;
+    margin-bottom: 3px;
+    padding: 7px 50px 8px 74px;
+
+    font-family: $cuprum;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 30px;
+    color: $basic-red;
+    text-decoration: none;
+
+    background: $basic-dark-gray;
+    border: 3px solid $basic-white;
+
+    &::before {
+      position: absolute;
+      left: 39px;
+      top: 13px;
+
+      width: 19px;
+      height: 20px;
+
+      background: url("../img/icon-phone.svg") no-repeat;
+      content: "";
+    }
+  }
+
+  &__address {
+    margin: 0;
+
+    font-family: $cuprum;
+    font-size: 14px;
+    color: $basic-light-blue;
+    text-align: center;
+  }
+
+  &__login {
+    display: flex;
+  }
+
+  &__login-link {
+    font-family: $cuprum;
+
+    font-size: 21px;
+    line-height: 21px;
+    color: $basic-black;
+    text-decoration: none;
+
+    background: $basic-white;
+
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      color: $basic-red;
+
+      path {
+        fill: $basic-blue;
+      }
+
+      &:active {
+        color: $basic-light-gray;
+
+        path {
+          fill: $basic-light-gray;
+        }
+      }
+    }
+  }
+
+  &__login-link_left {
+    position: relative;
+
+    margin-right: 10px;
+    padding: 12px 27px 12px 45px;
+  }
+
+  &__login-icon {
+    position: absolute;
+    top: 14px;
+    left: 19px;
+
+    path {
+      transition: all 0.4s ease-in-out;
+    }
+  }
+
+  &__login-link_right {
+    padding: 12px 24px;
+  }
+
+  &__nav {
+    padding: 0 29px 0 29px;
+
+    background: $basic-light-blue;
+    box-shadow: inset 0px -5px 0px #293449;
+  }
+
+  &__nav-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__nav-list-link {
+    display: inline-block;
+    padding: 16px 29px 20px 29px;
+
+    font-family: $cuprum;
+    font-size: 18px;
+    color: $basic-white;
+    text-decoration: none;
+
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      background: $basic-dark-blue;
+      box-shadow: inset 0px -5px 0px $basic-dark-blue;
+    }
+
+    &:active {
+      background: $basic-darkest-blue;
+      box-shadow: inset 0px -5px 0px $basic-dark-blue;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &__login-catalog {
+    max-width: 300px;
+
+    text-align: center;
+
+    svg {
+      display: block;
+    }
+  }
+
+  &__login-catalog-wrapper {
+    margin-bottom: 19px;
+    padding-top: 10px;
+  }
+
+  &__login-catalog-link-user-icon {
+    display: inline-block;
+    margin-right: 21px;
+
+    vertical-align: baseline;
+
+    path {
+      transition: all 0.5s ease-in;
+    }
+
+    &:hover path {
+      fill: #3d546f;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  &__login-catalog-link_user-name {
+    display: inline-block;
+    margin-right: 20px;
+
+    font-family: $cuprum;
+    font-size: 21px;
+    line-height: 21px;
+    color: $basic-black;
+    text-decoration: none;
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  &__login-catalog-link_unauthorise {
+    display: inline-block;
+
+    vertical-align: baseline;
+
+    path {
+      transition: all 0.5s ease-in;
+    }
+
+    &:hover path {
+      fill: #3d546f;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  &__login-catalog-link {
+    font-family: $cuprum;
+    font-size: 16px;
+    line-height: 18px;
+    color: $basic-light-blue;
+    text-decoration: none;
+
+    transition: all 0.3s ease-in;
+
+    &:hover {
+      color: $basic-red;
+    }
+
+    &:active {
+      color: $basic-light-blue;
+
+      opacity: 0.5;
+    }
+  }
+
+  &__login-catalog-link_left {
+    position: relative;
+
+    padding-right: 15px;
+    margin-right: 15px;
+
+    &::after {
+      position: absolute;
+      right: 0;
+      top: 7px;
+
+      width: 6px;
+      height: 6px;
+
+      background-color: $basic-light-blue;
+      border-radius: 50%;
+      content: "";
+    }
+  }
+  &__cart-button {
+    display: none;
+  }
+
+}
+
+

@@ -1,0 +1,14 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 47px;
+
+  background: $basic-red;
+  box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.24);
+
+  &:active {
+    background-color: $basic-dark-red;
+  }
+}

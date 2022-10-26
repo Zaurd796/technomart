@@ -1,0 +1,65 @@
+.card {
+  position: relative;
+
+  text-align: center;
+
+  border: 1px solid #eaeaea;
+  overflow: hidden;
+
+  &__link {
+    display: block;
+    padding: 29px 33px 21px 30px;
+
+    text-decoration: none;
+  }
+
+  &__img {
+    margin-bottom: 38px;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 7px;
+
+    font-size: 18px;
+    line-height: 20px;
+    color: $basic-black;
+  }
+
+  &__old-price {
+    margin-top: 0;
+    margin-bottom: 13px;
+
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 18px;
+    text-decoration-line: line-through;
+    text-transform: uppercase;
+
+    color: $basic-lightest-gray;
+  }
+
+  &__new {
+    position: absolute;
+    top: -9px;
+    right: -26px;
+  }
+
+  &__button {
+    position: relative;
+  }
+
+  &__new-price {
+    position: absolute;
+    top: 10px;
+    left: calc(50% - 36px);
+
+    margin: 0;
+
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: $basic-white;
+  }
+}

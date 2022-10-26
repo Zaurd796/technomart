@@ -1,0 +1,87 @@
+.order-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  display: none;
+  width: 100%;
+  max-width: 620px;
+  padding-top: 66px;
+
+  border-top: 7px solid $basic-red;
+  box-shadow: 0px 20px 40px rgba(41, 52, 73, 0.75);
+  background: $basic-white;
+
+  transform: translate(-50%, -50%);
+
+  &.open {
+    display: block;
+  }
+
+  &::before {
+    position: absolute;
+    top: 48px;
+    left: calc(50% - 225px);
+
+    width: 66px;
+    height: 66px;
+
+    background: url("../img/icon-mark.svg") no-repeat;
+    content: "";
+  }
+
+  &__text {
+    margin-top: 0;
+    margin-bottom: 67px;
+
+    font-family: $cuprum;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  &__buttons {
+    padding: 37px 0;
+
+    text-align: center;
+
+    background: #f1f1f1;
+  }
+
+  &__button {
+    font-family: $cuprum;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  &__button_left {
+    margin-right: 10px;
+    padding: 11px 46px 9px;
+
+    color: $basic-white;
+
+    background: $basic-red;
+  }
+
+  &__button_right {
+    padding: 11px 31px 9px;
+
+    color: $basic-black;
+
+    background-color: $basic-white;
+  }
+
+  &__close {
+    position: absolute;
+    top: 11px;
+    right: 11px;
+
+    padding: 0;
+
+    border: none;
+    background-color: transparent;
+  }
+}
